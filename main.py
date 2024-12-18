@@ -1,4 +1,5 @@
 import pygame
+import sys
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 
 def main():
@@ -8,7 +9,8 @@ def main():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return
+                pygame.quit()
+                sys.exit()
         screen.fill("black")
         pygame.display.flip()
 
