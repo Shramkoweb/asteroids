@@ -1,5 +1,6 @@
 import pygame
 import sys
+
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH, TICK_TIME
 from player import Player
 
@@ -22,7 +23,7 @@ def main():
         player.draw(screen)
         pygame.display.flip()
 
-        # limit the framerate to 60 FPS
+        # limit the frame rate to 60 FPS
         dt = clock.tick(TICK_TIME) / 1000
 
 
