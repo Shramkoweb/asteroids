@@ -17,6 +17,7 @@ def main():
                 pygame.quit()
                 sys.exit()
 
+        player.update(dt)
         screen.fill("black")
         player.draw(screen)
         pygame.display.flip()
