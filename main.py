@@ -13,6 +13,7 @@ def main():
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     screen_w, screen_h = pygame.display.get_surface().get_size()
     clock = pygame.time.Clock()
+    background = pygame.image.load("static/background.jpg")
 
     # Groups
     updatable = pygame.sprite.Group()
@@ -52,6 +53,7 @@ def main():
                     asteroid.split()
 
         screen.fill("black")
+        screen.blit(background, background.get_rect())
 
         for obj in drawable:
             obj.draw(screen)
