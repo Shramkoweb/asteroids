@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from constants import SCREEN_HEIGHT, SCREEN_WIDTH, TICK_TIME
+from constants import TICK_TIME
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
@@ -9,7 +9,8 @@ from shot import Shot
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((0, 0), pygame.RESIZABLE)
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    screen_w, screen_h = pygame.display.get_surface().get_size()
     clock = pygame.time.Clock()
 
     # Groups
@@ -22,11 +23,11 @@ def main():
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = updatable
     Shot.containers = (shots, updatable, drawable)
-    asteroid_field = AsteroidField()
+    asteroid_field = AsteroidField(screen_w, screen_h)
 
     Player.containers = (updatable, drawable)
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player = Player(screen_w / 2, screen_h / 2)
     dt = 0
 
     while True:
