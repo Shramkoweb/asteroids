@@ -9,27 +9,27 @@ class AsteroidField(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self, self.containers)
         self.spawn_timer = 0.0
         self.edges = [
-        [
-            pygame.Vector2(1, 0),
-            lambda y: pygame.Vector2(-ASTEROID_MAX_RADIUS, y * h),
-        ],
-        [
-            pygame.Vector2(-1, 0),
-            lambda y: pygame.Vector2(
-                w + ASTEROID_MAX_RADIUS, y * h
-            ),
-        ],
-        [
-            pygame.Vector2(0, 1),
-            lambda x: pygame.Vector2(x * w, -ASTEROID_MAX_RADIUS),
-        ],
-        [
-            pygame.Vector2(0, -1),
-            lambda x: pygame.Vector2(
-                x * w, h + ASTEROID_MAX_RADIUS
-            ),
-        ],
-    ]
+            [
+                pygame.Vector2(1, 0),
+                lambda y: pygame.Vector2(-ASTEROID_MAX_RADIUS, y * h),
+            ],
+            [
+                pygame.Vector2(-1, 0),
+                lambda y: pygame.Vector2(
+                    w + ASTEROID_MAX_RADIUS, y * h
+                ),
+            ],
+            [
+                pygame.Vector2(0, 1),
+                lambda x: pygame.Vector2(x * w, -ASTEROID_MAX_RADIUS),
+            ],
+            [
+                pygame.Vector2(0, -1),
+                lambda x: pygame.Vector2(
+                    x * w, h + ASTEROID_MAX_RADIUS
+                ),
+            ],
+        ]
 
     def spawn(self, radius, position, velocity):
         asteroid = Asteroid(position.x, position.y, radius)
