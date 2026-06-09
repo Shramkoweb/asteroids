@@ -2,7 +2,6 @@ import sys
 
 import pygame
 
-import logger
 from logger import log_state, log_event
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
@@ -30,7 +29,7 @@ def main():
     asteroid_field = AsteroidField()
 
     while True:
-        logger.log_state()
+        log_state()
         updatable.update(dt)
 
         for asteroid in asteroids:
